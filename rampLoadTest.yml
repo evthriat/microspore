@@ -1,11 +1,11 @@
 config:
   target: 'http://localhost:1337'
   phases:
-    - duration: 120
-      arrivalRate: 25
-      rampTo: 500
     - duration: 200
-      arrivalRate: 550
+      arrivalRate: 100
+      rampTo: 1000
+    - duration: 200
+      arrivalRate: 10000
   processor: "./artilVariables.js"
 scenarios: 
   - flow:
