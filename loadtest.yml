@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:1337'
+  phases:
+    - duration: 200
+      arrivalRate: 210
+  processor: "./artilVariables.js"
+scenarios: 
+  - flow:
+    - function: "randomUsers"
+    - get:
+        url: "/api/v1/primeusers/{{ randomID }}"
+    # - log: "Sent a request to usersID with {{ randomID }}"
+
+    

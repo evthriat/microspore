@@ -1,8 +1,8 @@
 //const newUsergenerator = require('./dataGenerator.js').generatePrimeUsers;
 //const optOutGenerator = require('./dataGenerator.js').optOutgeneration;
 //const testData = require('../testDataSmall.js');
-const Promise = require('bluebird');
-const content = require('../data.js').content;
+//const Promise = require('bluebird');
+//const content = require('../data.js').content;
 //console.log('content: ',content)
 var fs = require("fs");
 var es = require('event-stream');

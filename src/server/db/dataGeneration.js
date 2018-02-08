@@ -1,6 +1,11 @@
 const fs = require('fs');
+const faker = require('faker');
 //const file = fs.createWriteStream('./big.file');
 const { Writable } = require('stream');
+
+
+var randomDate = faker.date.between('1/1/2016','1/1/2017');
+console.log(Date.parse(randomDate))
 //const server = require('http').createServer();
 
 // server.on('request', (req, res) => {
@@ -24,15 +29,16 @@ const { Writable } = require('stream');
 
 var generatePrimeUsers = function(amount) {
   for (var i = 1; i <= amount; i++) {
-    var now = Date.now();
-    var date = new Date(now).toLocaleDateString();
-    var memberStart = new Date(now + 2592000000).toLocaleDateString();
-    fs.appendFileSync('testDataSmall.text', `${i},${amount - i},${date},${memberStart},${false}\n`);
+    var randomDate = faker.date.between('1/1/2016', '1/1/2017');
+    //var date = new Date(now).toLocaleDateString();
+    var memberStart = new Date(Date.parse(randomDate) + 2592000000).toLocaleDateString();
+
+    fs.appendFileSync('smalltest.text', `${i},${amount - i},${randomDate.toLocaleDateString()},${memberStart},${false}\n`);
   }
 
 };
 //console.log()
-//generatePrimeUsers(10000000);
+generatePrimeUsers(25);
 
 // var optOutgeneration = function(amount) {
 //   var result = [];

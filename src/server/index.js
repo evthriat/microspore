@@ -1,5 +1,11 @@
+require('newrelic');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
+
+const cluster = require('cluster');
+const http = require('http');
+const numCPUs = require('os').cpus().length;
+
 //const pg = require('pg');
 
 const indexRoutes = require('./routes/index');
