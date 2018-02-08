@@ -5,7 +5,7 @@ const { Writable } = require('stream');
 
 
 var randomDate = faker.date.between('1/1/2016','1/1/2017');
-console.log(Date.parse(randomDate))
+console.log(Date.parse(randomDate));
 //const server = require('http').createServer();
 
 // server.on('request', (req, res) => {
@@ -37,8 +37,7 @@ var generatePrimeUsers = function(amount) {
   }
 
 };
-//console.log()
-generatePrimeUsers(25);
+//generatePrimeUsers(25);
 
 // var optOutgeneration = function(amount) {
 //   var result = [];
