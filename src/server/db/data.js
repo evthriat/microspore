@@ -1,4 +1,4 @@
-var fs = require("fs");
+groupsvar fs = require("fs");
 var es = require('event-stream');
 //----will read small files
 var content = fs.readFileSync("./testDataSmall.file");

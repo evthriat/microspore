@@ -27,17 +27,38 @@ console.log(Date.parse(randomDate));
 
 //var randomizedDate;
 
+var random = function(arr) {
+  return arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
+};
+// var test = function() {
+//   var arr = [];
+//   for (var i = 0;  i < 25; i++) {
+//     arr.push(i)
+//   }
+//   for(var i =0; i < 25; i++) {
+//     console.log(random(arr))
+//   }
+// };
+// test();
 var generatePrimeUsers = function(amount) {
+  var userID = [];
+  var cartID = [];
+  for (var k = 0; k < amount; k++) {
+    userID.push(k);
+    cartID.push(k);
+  }
   for (var i = 1; i <= amount; i++) {
+    var randomUser = random(userID);
+    var randomCart = random(cartID);
     var randomDate = faker.date.between('1/1/2016', '1/1/2017');
     //var date = new Date(now).toLocaleDateString();
     var memberStart = new Date(Date.parse(randomDate) + 2592000000).toLocaleDateString();
 
-    fs.appendFileSync('smalltest.text', `${i},${amount - i},${randomDate.toLocaleDateString()},${memberStart},${false}\n`);
+    fs.appendFileSync('smalltest.text', `${randomUser},${randomCart},${randomDate.toLocaleDateString()},${memberStart},${false}\n`);
   }
 
 };
-//generatePrimeUsers(25);
+generatePrimeUsers(100);
 
 // var optOutgeneration = function(amount) {
 //   var result = [];

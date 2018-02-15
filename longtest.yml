@@ -3,9 +3,20 @@ config:
   phases:
     - duration: 100
       arrivalRate: 100
+      rampTo: 500
+    - duration: 120
+      arrivalRate: 500
+    - duration: 120
+      arrivalRate: 500
+      rampTo: 100
+    - duration: 120
+      arrivalRate: 100
       rampTo: 1000
     - duration: 120
       arrivalRate: 1000
+    - duration: 120
+      arrivalRate: 1000
+      rampTo: 50      
   processor: "./artilVariables.js"
 scenarios: 
   - flow:

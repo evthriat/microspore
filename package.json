@@ -4,7 +4,7 @@
   "description": "Scalable micro-service architecture mimicing simplified data flow for Amazon product search and product order placement",
   "main": "web-server/index.js",
   "scripts": {
-    "start": "node web-server/index.js",
+    "start": "node ./src/server/index.js",
     "test": "./node_modules/mocha/bin/_mocha --exit"
   },
   "repository": {
@@ -44,5 +44,8 @@
     "newrelic": "^2.7.0",
     "os": "^0.1.1",
     "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "nyc": "^11.4.1"
   }
 }
